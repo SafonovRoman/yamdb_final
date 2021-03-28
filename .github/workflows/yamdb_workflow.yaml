@@ -46,6 +46,8 @@ jobs:
           tags: sifonyan/yamdb_final:latest
 
   deploy:
+    name: Deploy to Docker Host
+    runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
       - name: Deploy to Docker Host
@@ -55,8 +57,11 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_KEY }}
           ssh_public_key: ${{ secrets.PUBLIC_SSH_KEY }}
           deployment_mode: docker-compose
-          args: up -d
+          copy_stack_file: true
           deploy_path: /srv/yamdb_final
+          stack_file_name: docker-compose.yaml
+          keep_files: 5
+          args: up -d
           docker_prune: 'true'
           pull_images_first: 'true'
 
