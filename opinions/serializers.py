@@ -20,7 +20,8 @@ class ReviewSerializer(serializers.ModelSerializer):
         )
         has_review = Review.objects.filter(author=user, title=title).exists()
         if self.context['request'].method == 'POST' and has_review:
-            raise serializers.ValidationError(f'Вы уже публиковали ревью на {title}')
+            raise serializers.ValidationError(
+                f'Вы уже публиковали ревью на {title}')
         return data
 
     class Meta:

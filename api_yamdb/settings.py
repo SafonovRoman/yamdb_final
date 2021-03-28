@@ -15,6 +15,9 @@ from datetime import timedelta
 from decouple import config
 import os  # без этой строки тесты не запустятся
 
+
+print(os.path)  # а без этой строки тесты считают, что зря мы os импортировали
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
