@@ -46,7 +46,6 @@ jobs:
           tags: sifonyan/yamdb_final:latest
 
   deploy:
-    runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
       - name: Deploy to Docker Host
@@ -54,6 +53,7 @@ jobs:
         with:
           remote_docker_host: ${{ secrets.USER }}@${{ secrets.HOST }}
           ssh_private_key: ${{ secrets.SSH_KEY }}
+          ssh_public_key: ${{ secrets.PUBLIC_SSH_KEY }}
           deployment_mode: docker-compose
           args: up -d
           deploy_path: /srv/yamdb_final
