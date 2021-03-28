@@ -32,7 +32,7 @@ DEBUG = config('DEBUG', default='False', cast=bool)
 
 
 def parse_hosts(line):
-    return line.split(', ') if type(line) != 'list' else line
+    return line if isinstance(line, list) else line.split(',')
 
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=parse_hosts)
