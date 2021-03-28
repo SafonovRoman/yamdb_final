@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 from decouple import config
-import os  # без этой строки тесты не запустятся
+import os  # без этой строки тесты не просто запустятся
 
 
 print(os.path)  # а без этой строки тесты считают, что зря мы os импортировали
