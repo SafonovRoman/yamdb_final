@@ -59,8 +59,17 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           source: "docker-compose.yaml,nginx.conf,.env"
-          target: "/srv/yamdb/"
+          target: "/srv/yamdb_final/"
           overwrite: "true"
+      - uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
+          script: |
+            cd /srv/yamdb_final/
+            sudo docker-compose up
 
   send_message:
     runs-on: ubuntu-latest
