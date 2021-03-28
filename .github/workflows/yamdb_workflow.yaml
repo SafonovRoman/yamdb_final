@@ -61,7 +61,7 @@ jobs:
           source: "docker-compose.yaml,nginx.conf,.env"
           target: "/srv/yamdb_final/"
           overwrite: "true"
-      - uses: appleboy/scp-action@master
+      - uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
