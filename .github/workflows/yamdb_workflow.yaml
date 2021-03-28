@@ -56,6 +56,7 @@ jobs:
           remote_docker_host: ${{ secrets.USER }}@${{ secrets.HOST }}
           ssh_private_key: ${{ secrets.SSH_KEY }}
           ssh_public_key: ${{ secrets.PUBLIC_SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           deployment_mode: docker-compose
           copy_stack_file: true
           deploy_path: /srv/yamdb_final
