@@ -1,0 +1,18 @@
+# Ignore everything
+**
+
+# Allowed
+!api_yamdb/
+!opinions/
+!templates/
+!titles/
+!yambd_auth
+!manage.py
+!readme.md
+!requirements.txt
+
+# Override allowed
+.idea/
+__pycache__/
+*.py[cod]
+*$py.class
