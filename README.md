@@ -1,5 +1,5 @@
 # yamdb
-![workflow](https://github.com/SafonovRoman/yamdb_final/actions/workflows/yamdb.yaml/badge.svg)
+![workflow](https://github.com/SafonovRoman/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
 
 ## Описание проекта:
 
