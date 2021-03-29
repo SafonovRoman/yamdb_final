@@ -9,7 +9,9 @@
 ### Сафонов Роман - [github](https://github.com/SafonovRoman/)
 
 Репозиторий с [проектом](https://github.com/SafonovRoman/infra_sp2).
+
 Развернуто [тут](http://130.193.41.133/)
+
 [Документация](http://130.193.41.133/redoc/)
 
 ### Технологии
