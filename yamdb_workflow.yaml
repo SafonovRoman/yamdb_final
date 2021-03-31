@@ -70,6 +70,8 @@ jobs:
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           script: |
             cd /srv/yamdb_final/
+            sudo docker-compose stop
+            sudo docker image rm sifonyan/yamdb_final:latest
             sudo docker-compose up -d
 
   send_message:
